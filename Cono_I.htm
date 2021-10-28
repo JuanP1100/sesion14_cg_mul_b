@@ -37,17 +37,18 @@ function init() {
     scene = new THREE.Scene();
     var arrCone = [1];
     var g = 90
+    var y = 3  //variable y para la translacion
 
     //formula de grados (g) a radianes (r).
     var r = (g * Math.PI)/180
 
          //Creacion del cono con todos sus parametros en metodo push.
-         arrCone.push(cone(1, 3, 12, 0, 0, 0, 'Phong', 'gray', false));
+         arrCone.push(cone(1, y, 12, 0, 0, 0, 'Phong', 'gray', false));
 
          /*Rotacion del cono en el eje "X" 90 grados en radianes respecto a su posicion inicial 
            y una traslacion en el eje "Y" para que el cono quede en la posicion requerida del grafico.*/
          arrCone[1].rotateX(r);
-         arrCone[1].geometry.translate(0, 1.5, 0);
+         arrCone[1].geometry.translate(0, y/2, 0);
 
     const axesHelper = new THREE.AxesHelper( 10 );
     scene.add(axesHelper);
